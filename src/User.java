@@ -16,9 +16,17 @@ public class User {
         this.password = password;
     }
 
+    void buy(Stock stock) {
+        stock.changeOwner(this);
+    }
+
+    void sell(Stock stock) {
+
+    }
+
     void create() {
         UsersDB.users.add(this);
-        UsersDB.saveToCSV("users.csv");
+        UsersDB.saveToCSV();
     }
 
     void delete() {
@@ -27,13 +35,13 @@ public class User {
     void login() {
         boolean found = false;
         for (User u : UsersDB.users) {
-            if (username == u.username && password == u.password) {
+            if (username == u.username && password == u.password) { // TODO: use string comparison for username and password
                 found = true;
                 System.out.println("Login Success");
-            } 
+            }
         }
 
-        if(!found) {
+        if (!found) {
             System.out.println("User not found, try signing up");
             signUp();
         }
