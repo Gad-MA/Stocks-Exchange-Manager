@@ -5,6 +5,7 @@
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,24 +13,36 @@ import java.util.ArrayList;
 
 public class Stock {
     String label;
-    User owner;
     double price;
-    ArrayList<Double> priceHistory = new ArrayList<Double>();
-    String csvLocation = "data/" + label + "priceHistory.csv";
+    int ownerId;
+    ArrayList<Double> priceHistory;
+    String csvLocation;
 
-    Stock(String label, double price, User owner) {
-        this.label = label;
-        this.price = price;
-        this.owner = owner;
+    Stock() {
     }
 
-    void changeOwner(User newOwner) {
+    Stock(String label, double price, int ownerId) {
+        this.label = label;
+        this.price = price;
+        this.ownerId = ownerId;
+        csvLocation = "data/" + label + "PriceHistory.csv";
+        try {
+            priceHistory = loadFromCSV();
+        } catch (Exception e) {
+            priceHistory.add(price);
+            saveToCSV();
+        }
+        StocksDB.stocks.add(this);
+        StocksDB.saveToCSV();
+    }
+
+    void changeOwner(int newOwnerId) {
     }
 
     void changePrice(double newPrice) {
+        price = newPrice;
         priceHistory.add(price);
         saveToCSV();
-        price = newPrice;
     }
 
     void saveToCSV() {
@@ -61,4 +74,8 @@ public class Stock {
 
     }
 
+    @Override
+    public String toString() {
+        return label + " " + price + " " + ownerId;
+    }
 }

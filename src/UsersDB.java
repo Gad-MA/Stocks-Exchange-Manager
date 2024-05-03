@@ -18,10 +18,9 @@ public class UsersDB {
             for (User user : users) {
                 StringBuilder sb = new StringBuilder();
                 // sb.append(user.name).append(",");
+                sb.append(user.id).append(",");
                 sb.append(user.username).append(",");
                 sb.append(user.password).append(",");
-                // sb.append(user.stocksWallet.getBalance()).append(",");
-                // sb.append(user.cashWallet.getBalance());
                 writer.write(sb.toString());
                 writer.newLine();
             }
@@ -37,11 +36,9 @@ public class UsersDB {
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
                 User user = new User();
-                // user.name = fields[0];
-                user.username = fields[0];
-                user.password = fields[1];
-                // user.stocksWallet = new StocksWallet(Double.parseDouble(fields[3]));
-                // user.cashWallet = new CashWallet(Double.parseDouble(fields[4]));
+                user.id = Integer.parseInt(fields[0]);
+                user.username = fields[1];
+                user.password = fields[2];
                 data.add(user);
             }
         } catch (IOException e) {

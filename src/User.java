@@ -2,6 +2,8 @@
  * User
  */
 public class User {
+    static int idGen = 0;
+    int id;
     String name;
     String username;
     String password;
@@ -14,10 +16,13 @@ public class User {
     User(String username, String password) {
         this.username = username;
         this.password = password;
+        this.id = idGen++;
+        UsersDB.users.add(this);
+        UsersDB.saveToCSV();
     }
 
     void buy(Stock stock) {
-        stock.changeOwner(this);
+        stock.changeOwner(this.id);
     }
 
     void sell(Stock stock) {
