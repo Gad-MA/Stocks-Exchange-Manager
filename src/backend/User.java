@@ -12,22 +12,20 @@ public class User {
     StocksWallet stocksWallet;
     CashWallet cashWallet;
 
-    User() {
+    public User() {
     }
 
-    User(String username, String password) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
         this.id = idGen++;
-        UsersDB.users.add(this);
-        UsersDB.saveToCSV();
     }
 
-    void buy(Stock stock) {
+    public void buy(Stock stock) {
         stock.changeOwner(this.id);
     }
 
-    void sell(Stock stock) {
+    public void sell(Stock stock) {
 
     }
 
@@ -39,7 +37,7 @@ public class User {
     void delete() {
     }
 
-    void login() {
+    public void login() {
         boolean found = false;
         for (User u : UsersDB.users) {
             if (username == u.username && password == u.password) { // TODO: use string comparison for username and password
@@ -54,7 +52,7 @@ public class User {
         }
     }
 
-    void signUp() {
+    public void signUp() {
         create();
     }
 
