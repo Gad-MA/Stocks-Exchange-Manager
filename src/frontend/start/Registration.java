@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package start;
+package frontend.start;
 
 import java.awt.Color;
+import frontend.Components.PanelCover;
 
 /**
  *
@@ -29,7 +30,7 @@ public class Registration extends javax.swing.JFrame {
     private void initComponents() {
 
         Gender = new javax.swing.ButtonGroup();
-        panelCover1 = new Components.PanelCover();
+        panelCover1 = new PanelCover();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         firstName = new javax.swing.JTextField();
@@ -38,7 +39,7 @@ public class Registration extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        registerNow = new start.Button();
+        registerNow = new Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registration");
@@ -309,8 +310,8 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField lastName;
-    private Components.PanelCover panelCover1;
+    private PanelCover panelCover1;
     private javax.swing.JPasswordField password;
-    private start.Button registerNow;
+    private Button registerNow;
     // End of variables declaration//GEN-END:variables
 }

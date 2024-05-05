@@ -1,3 +1,5 @@
+package backend;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -5,22 +7,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class UsersDB {
-    static String DBLocation = "data/users.csv";
-    public static ArrayList<User> users;
+public class StocksDB {
+    static String DBLocation = "data/stocks.csv";
+    public static ArrayList<Stock> stocks;
 
     public static void initialize(){
-        users = loadFromCSV();
+        stocks = loadFromCSV();
     }
 
     public static void saveToCSV() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(DBLocation))) {
-            for (User user : users) {
+            for (Stock stock : stocks) {
                 StringBuilder sb = new StringBuilder();
-                // sb.append(user.name).append(",");
-                sb.append(user.id).append(",");
-                sb.append(user.username).append(",");
-                sb.append(user.password).append(",");
+                sb.append(stock.label).append(",");
+                sb.append(stock.price).append(",");
+                sb.append(stock.ownerId).append(",");
                 writer.write(sb.toString());
                 writer.newLine();
             }
@@ -29,17 +30,17 @@ public class UsersDB {
         }
     }
 
-    public static ArrayList<User> loadFromCSV() {
-        ArrayList<User> data = new ArrayList<>();
+    public static ArrayList<Stock> loadFromCSV() {
+        ArrayList<Stock> data = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(DBLocation))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
-                User user = new User();
-                user.id = Integer.parseInt(fields[0]);
-                user.username = fields[1];
-                user.password = fields[2];
-                data.add(user);
+                Stock stock = new Stock();
+                stock.label = fields[0];
+                stock.price = Double.parseDouble(fields[1]);
+                stock.ownerId = Integer.parseInt(fields[2]);
+                data.add(stock);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,7 +50,7 @@ public class UsersDB {
     }
 
     public static void print(){
-        for(User u : users){
+        for(Stock u : stocks){
             System.out.println(u);
         }
     }
