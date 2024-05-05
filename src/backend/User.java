@@ -29,31 +29,33 @@ public class User {
 
     }
 
-    void create() {
-        UsersDB.users.add(this);
+    static void create(String username, String password) {
+        User user = new User(username, password);
+        UsersDB.users.add(user);
         UsersDB.saveToCSV();
     }
 
     void delete() {
     }
 
-    public void login() {
+    public static boolean login(String username, String password) {
         boolean found = false;
         for (User u : UsersDB.users) {
-            if (username == u.username && password == u.password) { // TODO: use string comparison for username and password
+            if (username == u.username && password == u.password) { // TODO: use string comparison for username and
+                                                                    // password
                 found = true;
                 System.out.println("Login Success");
+                return true;
             }
         }
 
-        if (!found) {
-            System.out.println("User not found, try signing up");
-            signUp();
-        }
+        System.out.println("User not found, try signing up");
+        signUp(username, password);
+        return false;
     }
 
-    public void signUp() {
-        create();
+    public static void signUp(String username, String password) {
+        create(username, password);
     }
 
     @Override

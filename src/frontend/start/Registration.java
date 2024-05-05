@@ -240,8 +240,7 @@ public class Registration extends javax.swing.JFrame {
                 // lastName;
                 // email;
                 // password;
-                User user = new User(firstName.getText(), password.getText());
-                user.signUp();
+                User.signUp(firstName.getText(), password.getText());
                 registerNow.setEnabled(false);
             }
     }// GEN-LAST:event_registerNowActionPerformed
