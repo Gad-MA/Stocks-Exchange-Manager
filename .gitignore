@@ -26,4 +26,8 @@ replay_pid*
 .vscode/
 .idea/
 bin/
-# lib/
+lib/
+build/
+nbproject/
+build.xml
+manifest.mf
