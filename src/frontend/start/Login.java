@@ -2,12 +2,11 @@
 package frontend.start;
 
 import frontend.Components.PanelCover;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 
 import backend.StocksDB;
 import backend.UsersDB;
-import frontend.Components.*;
+import java.text.DateFormat;
+import java.util.Date;
 
 public class Login extends javax.swing.JFrame {
 
