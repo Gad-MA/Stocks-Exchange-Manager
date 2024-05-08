@@ -77,11 +77,6 @@ public class Login extends javax.swing.JFrame {
 
         username.setForeground(new java.awt.Color(204, 204, 204));
         username.setText("Username");
-        username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         jLabel4.setText("Password ");
