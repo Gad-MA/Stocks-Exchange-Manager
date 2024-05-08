@@ -44,7 +44,6 @@ public class Admin extends javax.swing.JFrame {
         Welcome = new javax.swing.JLabel();
         User = new javax.swing.JLabel();
         StockManagement = new javax.swing.JLabel();
-        StockOrders = new javax.swing.JLabel();
         Price = new javax.swing.JLabel();
         Approval = new javax.swing.JLabel();
         Trading = new javax.swing.JLabel();
@@ -74,7 +73,15 @@ public class Admin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         clock = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
+        Pricehistory = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        ApprovalSys = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        TradingSys = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -145,22 +152,6 @@ public class Admin extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 StockManagementMouseExited(evt);
-            }
-        });
-
-        StockOrders.setBackground(new java.awt.Color(0, 143, 255));
-        StockOrders.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        StockOrders.setForeground(new java.awt.Color(255, 255, 255));
-        StockOrders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        StockOrders.setText("Stock Orders");
-        StockOrders.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        StockOrders.setOpaque(true);
-        StockOrders.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                StockOrdersMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                StockOrdersMouseExited(evt);
             }
         });
 
@@ -243,7 +234,6 @@ public class Admin extends javax.swing.JFrame {
                             .addComponent(Trading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
                             .addComponent(Approval, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(StockOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(StockManagement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(MainSideLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
@@ -259,15 +249,13 @@ public class Admin extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(StockManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(StockManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Price, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(StockOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Price, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Approval, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Approval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Trading, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -602,20 +590,97 @@ public class Admin extends javax.swing.JFrame {
 
         Obj.addTab("tab3", Stocks);
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        Pricehistory.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 605, Short.MAX_VALUE)
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        javax.swing.GroupLayout PricehistoryLayout = new javax.swing.GroupLayout(Pricehistory);
+        Pricehistory.setLayout(PricehistoryLayout);
+        PricehistoryLayout.setHorizontalGroup(
+            PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PricehistoryLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 558, Short.MAX_VALUE)
+        PricehistoryLayout.setVerticalGroup(
+            PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PricehistoryLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(357, Short.MAX_VALUE))
         );
 
-        Obj.addTab("tab4", jPanel10);
+        Obj.addTab("tab4", Pricehistory);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        javax.swing.GroupLayout ApprovalSysLayout = new javax.swing.GroupLayout(ApprovalSys);
+        ApprovalSys.setLayout(ApprovalSysLayout);
+        ApprovalSysLayout.setHorizontalGroup(
+            ApprovalSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+        );
+        ApprovalSysLayout.setVerticalGroup(
+            ApprovalSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ApprovalSysLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+
+        Obj.addTab("tab5", ApprovalSys);
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        javax.swing.GroupLayout TradingSysLayout = new javax.swing.GroupLayout(TradingSys);
+        TradingSys.setLayout(TradingSysLayout);
+        TradingSysLayout.setHorizontalGroup(
+            TradingSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+        );
+        TradingSysLayout.setVerticalGroup(
+            TradingSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TradingSysLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
+        Obj.addTab("tab6", TradingSys);
 
         jLayeredPane1.setLayer(MainSide, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Obj, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -662,14 +727,6 @@ public class Admin extends javax.swing.JFrame {
     private void StockManagementMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StockManagementMouseExited
                 StockManagement.setBackground(new Color(0,143,255));
     }//GEN-LAST:event_StockManagementMouseExited
-
-    private void StockOrdersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StockOrdersMouseEntered
-                StockOrders.setBackground(new Color(0,120,255));
-    }//GEN-LAST:event_StockOrdersMouseEntered
-
-    private void StockOrdersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StockOrdersMouseExited
-                StockOrders.setBackground(new Color(0,143,255));
-    }//GEN-LAST:event_StockOrdersMouseExited
 
     private void PriceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PriceMouseEntered
                 Price.setBackground(new Color(0,120,255));
@@ -764,16 +821,18 @@ public class Admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Approval;
+    private javax.swing.JPanel ApprovalSys;
     private javax.swing.JButton Exit;
     private javax.swing.JButton Logout;
     private javax.swing.JPanel MainSide;
     private javax.swing.JTabbedPane Obj;
     private javax.swing.JLabel Price;
+    private javax.swing.JPanel Pricehistory;
     private javax.swing.JPanel Remove;
     private javax.swing.JLabel StockManagement;
-    private javax.swing.JLabel StockOrders;
     private javax.swing.JPanel Stocks;
     private javax.swing.JLabel Trading;
+    private javax.swing.JPanel TradingSys;
     private javax.swing.JLabel User;
     private javax.swing.JPanel UserManage;
     private javax.swing.JLabel Welcome;
@@ -790,7 +849,6 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -800,6 +858,12 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     // End of variables declaration//GEN-END:variables
 }
