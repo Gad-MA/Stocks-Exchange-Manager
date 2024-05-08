@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package frontend.start;
 
 import java.awt.Color;
@@ -11,10 +8,7 @@ import backend.User;
 import backend.UsersDB;
 import frontend.Components.PanelCover;
 
-/**
- *
- * @author Hagras
- */
+
 public class Registration extends javax.swing.JFrame {
 
     /**
@@ -35,7 +29,7 @@ public class Registration extends javax.swing.JFrame {
     private void initComponents() {
 
         Gender = new javax.swing.ButtonGroup();
-        panelCover1 = new Components.PanelCover();
+        panelCover1 = new frontend.Components.PanelCover();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         firstName = new javax.swing.JTextField();
@@ -44,7 +38,7 @@ public class Registration extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        registerNow = new start.Button();
+        registerNow = new frontend.start.Button();
         username = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -360,9 +354,9 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField lastName;
-    private Components.PanelCover panelCover1;
+    private frontend.Components.PanelCover panelCover1;
     private javax.swing.JPasswordField password;
-    private start.Button registerNow;
+    private frontend.start.Button registerNow;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
