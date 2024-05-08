@@ -6,7 +6,10 @@ import frontend.Components.PanelCover;
 import java.text.DateFormat;
 import java.util.Date;
 
+import backend.UsersDatabase;
+
 public class Login extends javax.swing.JFrame {
+    UsersDatabase users = UsersDatabase.getInstance();
 
     public Login() {
         initComponents();

@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-class StocksWallet implements Serializable {
+public class StocksWallet implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Map<String, Integer> stocksOwned;

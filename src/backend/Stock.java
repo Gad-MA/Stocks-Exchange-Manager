@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-class Stock implements Serializable {
+public class Stock implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String symbol;

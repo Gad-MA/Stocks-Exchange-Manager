@@ -4,15 +4,24 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-class UsersDatabase implements Serializable {
+public class UsersDatabase implements Serializable { // Used the singleton design pattern for any easy passing of the
+                                                     // Database object around
     private static final long serialVersionUID = 1L;
 
     private Map<String, User> users;
-    private String filename;
+    private String filename = "users.dat";
+    private static UsersDatabase obj = null;
 
-    public UsersDatabase(String filename) {
-        this.filename = filename;
+    private UsersDatabase() {
         this.users = loadUsers();
+    }
+
+    public static UsersDatabase getInstance() {
+        if (obj == null) {
+            obj = new UsersDatabase();
+            return obj;
+        }
+        return obj;
     }
 
     private Map<String, User> loadUsers() {
@@ -51,6 +60,7 @@ class UsersDatabase implements Serializable {
         for (Map.Entry<String, User> entry : users.entrySet()) {
             User user = entry.getValue();
             System.out.println("Username: " + user.getUsername());
+            System.out.println("Password: " + user.getPassword());
             System.out.println("Stocks:");
             // for (Map.Entry<String, Integer> stockEntry :
             // user.getStocksWallet().getStocksOwned().entrySet()) {
@@ -74,6 +84,5 @@ class UsersDatabase implements Serializable {
         addUser(username, password);
         return true;
     }
-
 
 }

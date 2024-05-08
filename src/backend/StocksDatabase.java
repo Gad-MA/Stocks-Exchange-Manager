@@ -3,15 +3,23 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-class StocksDatabase implements Serializable {
+public class StocksDatabase implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Map<String, Stock> stocks;
-    private String filename;
+    private String filename = "stocks.dat";
+    private static StocksDatabase obj = null;
 
-    public StocksDatabase(String filename) {
-        this.filename = filename;
+    private StocksDatabase() {
         this.stocks = loadStocks();
+    }
+
+    public static StocksDatabase getInstance(){
+        if(obj==null){
+            obj = new StocksDatabase();
+            return obj;
+        }
+        return obj;
     }
 
     private Map<String, Stock> loadStocks() {

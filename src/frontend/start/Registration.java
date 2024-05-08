@@ -3,11 +3,12 @@ package frontend.start;
 
 import java.awt.Color;
 
+import backend.UsersDatabase;
 import frontend.Components.PanelCover;
 
 
 public class Registration extends javax.swing.JFrame {
-
+    UsersDatabase users = UsersDatabase.getInstance();
     /**
      * Creates new form Registration
      */
@@ -237,7 +238,10 @@ public class Registration extends javax.swing.JFrame {
                 // lastName;
                 // email;
                 // password;
+                users.register(username.getText(), password.getText());
                 registerNow.setEnabled(false);
+                this.dispose();
+                new Admin().setVisible(true);
                 //this.dispose();
 
             }
