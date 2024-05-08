@@ -3,9 +3,6 @@ package frontend.start;
 
 import java.awt.Color;
 
-import backend.StocksDB;
-import backend.User;
-import backend.UsersDB;
 import frontend.Components.PanelCover;
 
 
@@ -240,12 +237,10 @@ public class Registration extends javax.swing.JFrame {
                 // lastName;
                 // email;
                 // password;
-                User.signUp(firstName.getText(), password.getText());
                 registerNow.setEnabled(false);
                 //this.dispose();
 
             }
-                 
     }// GEN-LAST:event_registerNowActionPerformed
 
     private void firstNameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_firstNameActionPerformed

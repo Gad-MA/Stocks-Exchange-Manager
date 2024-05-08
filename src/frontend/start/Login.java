@@ -3,8 +3,6 @@ package frontend.start;
 
 import frontend.Components.PanelCover;
 
-import backend.StocksDB;
-import backend.UsersDB;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -12,9 +10,6 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
-        UsersDB.initialize();
-        StocksDB.initialize();
-
     }
 
     @SuppressWarnings("unchecked")
