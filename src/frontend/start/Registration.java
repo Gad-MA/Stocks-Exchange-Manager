@@ -234,7 +234,7 @@ public class Registration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void registerNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerNowActionPerformed
+    private void registerNowActionPerformed(java.awt.event.ActionEvent evt) {                                            
             if(evt.getSource()==registerNow){
                 // firstName;
                 // lastName;
@@ -242,7 +242,10 @@ public class Registration extends javax.swing.JFrame {
                 // password;
                 User.signUp(firstName.getText(), password.getText());
                 registerNow.setEnabled(false);
+                //this.dispose();
+
             }
+                 
     }// GEN-LAST:event_registerNowActionPerformed
 
     private void firstNameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_firstNameActionPerformed

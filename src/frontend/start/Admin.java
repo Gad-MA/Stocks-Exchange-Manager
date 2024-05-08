@@ -74,6 +74,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         clock = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -323,6 +324,11 @@ public class Admin extends javax.swing.JFrame {
         jLabel3.setText("Add User");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -494,8 +500,14 @@ public class Admin extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/Components/add.png"))); // NOI18N
         jLabel8.setText("Add Stock");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -589,6 +601,21 @@ public class Admin extends javax.swing.JFrame {
         );
 
         Obj.addTab("tab3", Stocks);
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 605, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 558, Short.MAX_VALUE)
+        );
+
+        Obj.addTab("tab4", jPanel10);
 
         jLayeredPane1.setLayer(MainSide, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Obj, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -691,6 +718,16 @@ public class Admin extends javax.swing.JFrame {
         Obj.setSelectedIndex(1);
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        new Registration().setVisible(true);
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+            new addingStock().setVisible(true);
+   
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -753,6 +790,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
