@@ -201,6 +201,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(users.login(username.getText(), password.getText())){
             new User().setVisible(true);
+            System.out.println("Logged in");
             this.dispose();
         } else {
             System.out.println("Username or password is invalid, try registering");

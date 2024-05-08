@@ -16,7 +16,7 @@ public class StockExchangeManager {
         StocksDatabase stocksDatabase = StocksDatabase.getInstance();
         StocksWalletsDatabase walletsDatabase = StocksWalletsDatabase.getInstance();
 
-        new Login().setVisible(true);
+        // new Login().setVisible(true);
 
         // usersDatabase.printUsers();
         // stocksDatabase.printStocks();

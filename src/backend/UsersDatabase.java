@@ -46,6 +46,10 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
         }
     }
 
+    public void removeUser(String username) {
+        users.remove(username);
+    }
+
     public void addUser(String username, String password) {
         users.put(username, new User(username, password));
         saveUsers();
@@ -73,13 +77,19 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
     }
 
     public boolean login(String username, String password) {
-        if (users.containsKey(username) && users.get(username).getPassword().equals(password))
+        if (search(username) && users.get(username).getPassword().equals(password))
+            return true;
+        return false;
+    }
+
+    public boolean search(String username) {
+        if (users.containsKey(username))
             return true;
         return false;
     }
 
     public boolean register(String username, String password) {
-        if (users.containsKey(username))
+        if (search(username))
             return false;
         addUser(username, password);
         return true;
