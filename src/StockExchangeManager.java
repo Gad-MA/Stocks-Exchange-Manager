@@ -18,7 +18,7 @@ public class StockExchangeManager {
 
         // new Login().setVisible(true);
 
-        // usersDatabase.printUsers();
+        usersDatabase.printUsers();
         // stocksDatabase.printStocks();
         // walletsDatabase.printWallets();
 

@@ -44,8 +44,8 @@ public class StocksDatabase implements Serializable {
         }
     }
 
-    public void addStock(String symbol, String name, double price) {
-        stocks.put(symbol, new Stock(symbol, name, price));
+    public void addStock(String symbol, String name, double price, String owner, int quantity) {
+        stocks.put(symbol, new Stock(symbol, name, price, owner, quantity));
         saveStocks();
     }
 
@@ -60,6 +60,7 @@ public class StocksDatabase implements Serializable {
             System.out.println("Symbol: " + stock.getSymbol());
             System.out.println("Name: " + stock.getName());
             System.out.println("Price: " + stock.getPrice());
+            System.out.println("Owner: " + stock.getOwner());
             System.out.println();
         }
     }

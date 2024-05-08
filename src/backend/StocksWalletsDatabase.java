@@ -68,4 +68,5 @@ public class StocksWalletsDatabase implements Serializable {
             System.out.println();
         }
     }
+
 }
