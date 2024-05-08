@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 
 import backend.StocksDB;
 import backend.UsersDB;
-import frontend.Components.*;
 
 public class Login extends javax.swing.JFrame {
 
