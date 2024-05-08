@@ -31,11 +31,11 @@ public class Registration extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         Gender = new javax.swing.ButtonGroup();
-        panelCover1 = new PanelCover();
+        panelCover1 = new Components.PanelCover();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         firstName = new javax.swing.JTextField();
@@ -44,7 +44,8 @@ public class Registration extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        registerNow = new Button();
+        registerNow = new start.Button();
+        username = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registration");
@@ -68,7 +69,6 @@ public class Registration extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 firstNameFocusGained(evt);
             }
-
             public void focusLost(java.awt.event.FocusEvent evt) {
                 firstNameFocusLost(evt);
             }
@@ -85,7 +85,6 @@ public class Registration extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 lastNameFocusGained(evt);
             }
-
             public void focusLost(java.awt.event.FocusEvent evt) {
                 lastNameFocusLost(evt);
             }
@@ -102,7 +101,6 @@ public class Registration extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailFocusGained(evt);
             }
-
             public void focusLost(java.awt.event.FocusEvent evt) {
                 emailFocusLost(evt);
             }
@@ -134,107 +132,115 @@ public class Registration extends javax.swing.JFrame {
             }
         });
 
+        username.setForeground(new java.awt.Color(153, 153, 153));
+        username.setText("Username");
+        username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelCover1Layout = new javax.swing.GroupLayout(panelCover1);
         panelCover1.setLayout(panelCover1Layout);
         panelCover1Layout.setHorizontalGroup(
-                panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCover1Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(
-                                        panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(panelCover1Layout.createSequentialGroup()
-                                                        .addGap(6, 6, 6)
-                                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(58, 58, 58))
-                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addGroup(panelCover1Layout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCover1Layout
-                                                .createSequentialGroup()
-                                                .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 126,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82,
-                                                        Short.MAX_VALUE)
-                                                .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 118,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap(27, Short.MAX_VALUE))
-                                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 303,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        Short.MAX_VALUE))))
-                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                .addGroup(panelCover1Layout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                                .addGap(43, 43, 43)
-                                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 248,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                                .addGap(24, 24, 24)
-                                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 246,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                                .addGap(92, 92, 92)
-                                                .addComponent(registerNow, javax.swing.GroupLayout.PREFERRED_SIZE, 147,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCover1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58))
+            .addGroup(panelCover1Layout.createSequentialGroup()
+                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(registerNow, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelCover1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelCover1Layout.createSequentialGroup()
+                        .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(username)
+                            .addGroup(panelCover1Layout.createSequentialGroup()
+                                .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                                .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(27, 27, 27))))
+        );
         panelCover1Layout.setVerticalGroup(
-                panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelCover1Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)
-                                .addGap(32, 32, 32)
-                                .addGroup(panelCover1Layout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(jCheckBox1)
-                                .addGap(18, 18, 18)
-                                .addComponent(registerNow, javax.swing.GroupLayout.PREFERRED_SIZE, 44,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(31, Short.MAX_VALUE)));
+            panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCover1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(32, 32, 32)
+                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jCheckBox1)
+                .addGap(18, 18, 18)
+                .addComponent(registerNow, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelCover1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelCover1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelCover1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelCover1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void registerNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerNowActionPerformed
+    private void usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusGained
+                if(username.getText().equals("Username")){
+                    username.setText("");
+                    username.setForeground(Color.BLACK);
+                }
+    }//GEN-LAST:event_usernameFocusGained
+
+    private void usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusLost
+                if(username.getText().equals("")){
+                    username.setText("Username");
+                    username.setForeground(new Color(153,153,153));
+                }
+    }//GEN-LAST:event_usernameFocusLost
+
+    private void registerNowActionPerformed(java.awt.event.ActionEvent evt) {                                            
             if(evt.getSource()==registerNow){
                 // firstName;
                 // lastName;
@@ -242,7 +248,10 @@ public class Registration extends javax.swing.JFrame {
                 // password;
                 User.signUp(firstName.getText(), password.getText());
                 registerNow.setEnabled(false);
+                //this.dispose();
+
             }
+                 
     }// GEN-LAST:event_registerNowActionPerformed
 
     private void firstNameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_firstNameActionPerformed
@@ -351,8 +360,9 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField lastName;
-    private PanelCover panelCover1;
+    private Components.PanelCover panelCover1;
     private javax.swing.JPasswordField password;
-    private Button registerNow;
+    private start.Button registerNow;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
