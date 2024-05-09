@@ -17,7 +17,6 @@ public class StocksDatabase implements Serializable {
     public static StocksDatabase getInstance(){
         if(obj==null){
             obj = new StocksDatabase();
-            return obj;
         }
         return obj;
     }
