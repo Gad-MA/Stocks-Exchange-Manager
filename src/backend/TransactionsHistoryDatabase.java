@@ -24,6 +24,7 @@ public class TransactionsHistoryDatabase implements Serializable{
         return obj;
     }
 
+    @SuppressWarnings("unchecked")
     private ArrayList<Transaction> loadTransactions() {
         File file = new File(filename);
         if (!file.exists()) {

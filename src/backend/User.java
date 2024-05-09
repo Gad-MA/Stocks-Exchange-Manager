@@ -1,8 +1,6 @@
 package backend;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 
 class User implements Serializable {
     private static final long serialVersionUID = 1L;

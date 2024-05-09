@@ -1,7 +1,6 @@
 package backend;
+
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Stock implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -11,6 +10,7 @@ public class Stock implements Serializable {
     private double price;
     private String owner;
     private int quantity;
+
 
     public Stock(String symbol, String name, double price, String owner, int quantity) {
         this.symbol = symbol;
@@ -36,11 +36,11 @@ public class Stock implements Serializable {
         owner = newOwner;
     }
 
-    public String getOwner(){
+    public String getOwner() {
         return owner;
     }
 
-    public double getQuantity(){
+    public double getQuantity() {
         return quantity;
     }
 }

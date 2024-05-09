@@ -21,6 +21,7 @@ public class StocksDatabase implements Serializable {
         return obj;
     }
 
+    @SuppressWarnings("unchecked")
     private Map<String, Stock> loadStocks() {
         File file = new File(filename);
         if (!file.exists()) {

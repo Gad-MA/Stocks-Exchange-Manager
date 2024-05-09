@@ -42,6 +42,7 @@ public class StocksWallet implements Serializable {
 
     }
 
+
     public void removeStock(String symbol) {
         stocksOwned.remove(symbol);
     }

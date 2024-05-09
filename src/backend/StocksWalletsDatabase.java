@@ -10,7 +10,6 @@ public class StocksWalletsDatabase implements Serializable {
     public Map<String, StocksWallet> wallets;
     private static StocksWalletsDatabase obj = null;
     private String filename = "wallets.dat";
-    private TransactionsHistoryDatabase transactionsDatabase = TransactionsHistoryDatabase.getInstance();
 
     private StocksWalletsDatabase() {
         wallets = loadWallets();
@@ -23,6 +22,7 @@ public class StocksWalletsDatabase implements Serializable {
         return obj;
     }
 
+    @SuppressWarnings("unchecked")
     private Map<String, StocksWallet> loadWallets() {
         File file = new File(filename);
         if (!file.exists()) {
@@ -70,15 +70,5 @@ public class StocksWalletsDatabase implements Serializable {
         }
     }
 
-    public boolean stockTransaction(String oldOwner, String newOwner, String symbol, int quantity) {
-        StocksWallet oldOwnerWallet = getWallet(oldOwner);
-        StocksWallet newOwnerWallet = getWallet(newOwner);
-        if (oldOwnerWallet.sellStock(symbol, quantity)) {
-            newOwnerWallet.buyStock(symbol, quantity);
-            transactionsDatabase.addTransaction(new Transaction(oldOwner, newOwner, symbol, quantity));
-            return true;
-        }
-        return false;
 
-    }
 }
