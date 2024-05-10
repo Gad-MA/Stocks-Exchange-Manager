@@ -24,6 +24,7 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
         return obj;
     }
 
+    @SuppressWarnings("unchecked")
     private Map<String, User> loadUsers() {
         File file = new File(filename);
         if (!file.exists()) {
