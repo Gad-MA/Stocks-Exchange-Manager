@@ -6,8 +6,13 @@ package frontend.start;
 
 import frontend.Components.Clock;
 import java.awt.Color;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -84,6 +89,14 @@ public class Admin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
         setBackground(new java.awt.Color(255, 255, 255));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
@@ -913,6 +926,46 @@ if(temail.getText().equals("")){
             tpassword.setText("Password");
             tpassword.setForeground(new Color(153,153,153));
     }//GEN-LAST:event_button3ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+DefaultTableModel model = (DefaultTableModel) usertable.getModel();
+        Vector<Vector> tableData = model.getDataVector();
+        
+        //Saving of object in a file
+        try {
+            FileOutputStream file = new FileOutputStream("file.bin");
+            ObjectOutputStream output = new ObjectOutputStream(file);
+            
+            // Method for serialization of object
+            output.writeObject(tableData);
+
+            output.close();
+            file.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }    }//GEN-LAST:event_formWindowClosing
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            // TODO add your handling code here:
+            FileInputStream file = new FileInputStream("file.bin");
+            ObjectInputStream input = new ObjectInputStream(file);
+            // Method for deserialization of object
+            Vector<Vector> tableData = (Vector<Vector>)input.readObject();
+            
+            input.close();
+            file.close();
+            
+            
+            DefaultTableModel model = (DefaultTableModel) usertable.getModel();
+            for (int i = 0; i < tableData.size(); i++) {
+                Vector row = tableData.get(i);
+                model.addRow(new Object[]{row.get(0), row.get(1), row.get(2), row.get(3)});
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
