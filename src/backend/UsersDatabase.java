@@ -51,8 +51,11 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
         users.remove(username);
     }
 
-    public void addUser(String username, String password) {
-        users.put(username, new User(username, password));
+    public void addUser(String username, String password, boolean isAdmin) {
+        if (!isAdmin)
+            users.put(username, new User(username, password));
+        else
+            users.put(username, new Admin(username, password));
         saveUsers();
     }
 
@@ -66,6 +69,8 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
             User user = entry.getValue();
             System.out.println("Username: " + user.getUsername());
             System.out.println("Password: " + user.getPassword());
+            String className = user.getClass().getSimpleName();
+            System.out.println("is Admin?: " + (className.equals("Admin")? "yes":"no"));
             System.out.println("Stocks:");
             // for (Map.Entry<String, Integer> stockEntry :
             // user.getStocksWallet().getStocksOwned().entrySet()) {
@@ -77,10 +82,10 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
         }
     }
 
-    public boolean login(String username, String password) {
+    public User login(String username, String password) {
         if (search(username) && users.get(username).getPassword().equals(password))
-            return true;
-        return false;
+            return users.get(username);
+        return null;
     }
 
     public boolean search(String username) {
@@ -89,10 +94,10 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
         return false;
     }
 
-    public boolean register(String username, String password) {
+    public boolean register(String username, String password, boolean isAdmin) {
         if (search(username))
             return false;
-        addUser(username, password);
+        addUser(username, password, isAdmin);
         return true;
     }
 

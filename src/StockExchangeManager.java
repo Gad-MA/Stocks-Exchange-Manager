@@ -19,12 +19,12 @@ public class StockExchangeManager {
         TransactionsHistoryDatabase transactionsDatabase = TransactionsHistoryDatabase.getInstance();
         OrdersDatabase ordersDatabase = OrdersDatabase.getInstance();
 
-        // new Login().setVisible(true);
+        new Login().setVisible(true);
 
-        // usersDatabase.printUsers();
+        usersDatabase.printUsers();
         // stocksDatabase.printStocks();
         // walletsDatabase.printWallets();
-        transactionsDatabase.printTransactions();
+        // transactionsDatabase.printTransactions();
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {

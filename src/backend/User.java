@@ -2,12 +2,13 @@ package backend;
 
 import java.io.*;
 
-class User implements Serializable {
+public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String username;
-    private String password;
+    protected String username;
+    protected String password;
 
+    public User(){}
     public User(String username, String password) {
         this.username = username;
         this.password = password;

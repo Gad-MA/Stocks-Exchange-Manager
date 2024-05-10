@@ -238,12 +238,11 @@ public class Registration extends javax.swing.JFrame {
                 // lastName;
                 // email;
                 // password;
-                users.register(username.getText(), password.getText());
+                users.register(username.getText(), password.getText(), true);
                 registerNow.setEnabled(false);
                 this.dispose();
                 new Login().setVisible(true);
                 //this.dispose();
-
             }
     }// GEN-LAST:event_registerNowActionPerformed
 
