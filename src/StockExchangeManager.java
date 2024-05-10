@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import frontend.start.*;
+import backend.OrdersDatabase;
 import backend.StocksDatabase;
 import backend.StocksWalletsDatabase;
 import backend.Transaction;
@@ -16,6 +17,7 @@ public class StockExchangeManager {
         StocksDatabase stocksDatabase = StocksDatabase.getInstance();
         StocksWalletsDatabase walletsDatabase = StocksWalletsDatabase.getInstance();
         TransactionsHistoryDatabase transactionsDatabase = TransactionsHistoryDatabase.getInstance();
+        OrdersDatabase ordersDatabase = OrdersDatabase.getInstance();
 
         // new Login().setVisible(true);
 
@@ -30,6 +32,7 @@ public class StockExchangeManager {
                 stocksDatabase.saveStocks();
                 walletsDatabase.saveWallets();
                 transactionsDatabase.saveTransactions();
+                ordersDatabase.saveOrders();
             }
         });
     }
