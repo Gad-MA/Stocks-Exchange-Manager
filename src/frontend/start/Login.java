@@ -24,7 +24,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JLayeredPane();
-        panelCover1 = new PanelCover();
+        panelCover1 = new Components.PanelCover();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -33,8 +33,8 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         password = new javax.swing.JPasswordField();
-        button2 = new Button();
-        Register = new Button();
+        button2 = new start.Button();
+        Register = new start.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("StockPulse");
@@ -79,7 +79,6 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         username.setForeground(new java.awt.Color(204, 204, 204));
-        username.setText("Username");
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         jLabel4.setText("Password ");
@@ -258,16 +257,16 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Button Register;
+    private start.Button Register;
     private javax.swing.JLayeredPane bg;
-    private Button button2;
+    private start.Button button2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private PanelCover panelCover1;
+    private Components.PanelCover panelCover1;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

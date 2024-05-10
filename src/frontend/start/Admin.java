@@ -66,6 +66,21 @@ public class Admin extends javax.swing.JFrame {
         usertable = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         temail = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        button5 = new frontend.start.Button();
+        button6 = new frontend.start.Button();
+        button7 = new frontend.start.Button();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        stocktable = new javax.swing.JTable();
+        tprofit = new javax.swing.JTextField();
+        tdividend = new javax.swing.JTextField();
+        tinitial = new javax.swing.JTextField();
+        tquantity = new javax.swing.JTextField();
+        tcompany = new javax.swing.JTextField();
+        ttrading = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Stocks = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -461,6 +476,220 @@ public class Admin extends javax.swing.JFrame {
 
         Obj.addTab("tab7", jPanel10);
 
+        jPanel1.setBackground(new java.awt.Color(0, 143, 255));
+
+        button5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/Components/add small.png"))); // NOI18N
+        button5.setText("Add");
+        button5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        button5.setRadius(40);
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
+
+        button6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/Components/rubber.png"))); // NOI18N
+        button6.setText("Clear");
+        button6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        button6.setRadius(40);
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
+
+        button7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/Components/bin.png"))); // NOI18N
+        button7.setText("Remove");
+        button7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        button7.setRadius(40);
+        button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7ActionPerformed(evt);
+            }
+        });
+
+        stocktable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Company", "Quantity", "Initial Price", "Trading Price", "Dividend", "Profit %"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(stocktable);
+
+        tprofit.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tprofit.setForeground(new java.awt.Color(153, 153, 153));
+        tprofit.setText("Profit Percentage");
+        tprofit.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tprofitFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tprofitFocusLost(evt);
+            }
+        });
+        tprofit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tprofitActionPerformed(evt);
+            }
+        });
+
+        tdividend.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tdividend.setForeground(new java.awt.Color(153, 153, 153));
+        tdividend.setText("Dividend");
+        tdividend.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tdividendFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tdividendFocusLost(evt);
+            }
+        });
+
+        tinitial.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tinitial.setForeground(new java.awt.Color(153, 153, 153));
+        tinitial.setText("Initial Price");
+        tinitial.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tinitialFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tinitialFocusLost(evt);
+            }
+        });
+
+        tquantity.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tquantity.setForeground(new java.awt.Color(153, 153, 153));
+        tquantity.setText("Available Quantity");
+        tquantity.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tquantityFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tquantityFocusLost(evt);
+            }
+        });
+
+        tcompany.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tcompany.setForeground(new java.awt.Color(153, 153, 153));
+        tcompany.setText("Company Name");
+        tcompany.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tcompanyFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tcompanyFocusLost(evt);
+            }
+        });
+
+        ttrading.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        ttrading.setForeground(new java.awt.Color(153, 153, 153));
+        ttrading.setText("Trading Price");
+        ttrading.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                ttradingFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ttradingFocusLost(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setText("$");
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setText("$");
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("%");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 29, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tquantity)
+                            .addComponent(tcompany)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(tdividend, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tinitial, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tprofit, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                    .addComponent(ttrading))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+        );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tdividend, tinitial, tprofit, ttrading});
+
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(tcompany, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tinitial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ttrading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tdividend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tprofit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tdividend, tinitial, tprofit, ttrading});
+
+        Obj.addTab("tab6", jPanel1);
+
         Stocks.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 211, 245));
@@ -641,8 +870,8 @@ public class Admin extends javax.swing.JFrame {
             PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PricehistoryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         Obj.addTab("tab4", Pricehistory);
@@ -791,7 +1020,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_UserMouseClicked
 
     private void StockManagementMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StockManagementMouseClicked
-        Obj.setSelectedIndex(2);
+        Obj.setSelectedIndex(1);
     }//GEN-LAST:event_StockManagementMouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -967,6 +1196,115 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
         }
     }//GEN-LAST:event_formWindowOpened
 
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+            String company = tcompany.getText();
+            String quantity = tquantity.getText();
+            String initial = tinitial.getText();
+            String trading = ttrading.getText();
+            String dividend = tdividend.getText();
+            String profit = tprofit.getText();
+
+            if(company.isEmpty()||company.equals("Company Name") || quantity.isEmpty()||quantity.equals("Available Quantity") || initial.isEmpty()||initial.equals("Initial Price") || trading.isEmpty()||trading.equals("Trading Price")|| dividend.isEmpty()||dividend.equals("Dividend")||profit.isEmpty()||profit.equals("Profit Percentage")){
+                JOptionPane.showMessageDialog(this, "Please fill all fields !","Try Again", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                DefaultTableModel model = (DefaultTableModel) stocktable.getModel();
+                model.addRow(new Object[]{company,quantity,initial,trading,dividend,profit});
+            }
+            
+            tcompany.setText("Company Name");
+            tcompany.setForeground(new Color(153,153,153));
+            tquantity.setText("Available Quantity");
+            tquantity.setForeground(new Color(153,153,153));
+            tinitial.setText("Initial Price");
+            tinitial.setForeground(new Color(153,153,153));
+            ttrading.setText("Trading Price");
+            ttrading.setForeground(new Color(153,153,153));
+            tdividend.setText("Dividend");
+            tdividend.setForeground(new Color(153,153,153));
+            tprofit.setText("Profit Percentage");
+            tprofit.setForeground(new Color(153,153,153));
+    }//GEN-LAST:event_button5ActionPerformed
+
+    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+            tcompany.setText("Company Name");
+            tcompany.setForeground(new Color(153,153,153));
+            tquantity.setText("Available Quantity");
+            tquantity.setForeground(new Color(153,153,153));
+            tinitial.setText("Initial Price");
+            tinitial.setForeground(new Color(153,153,153));
+            ttrading.setText("Trading Price");
+            ttrading.setForeground(new Color(153,153,153));
+            tdividend.setText("Dividend");
+            tdividend.setForeground(new Color(153,153,153));
+            tprofit.setText("Profit Percentage");
+            tprofit.setForeground(new Color(153,153,153));
+    }//GEN-LAST:event_button6ActionPerformed
+
+    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+                int row = usertable.getSelectedRow();
+            
+            if(row<0){
+                JOptionPane.showMessageDialog(this,"No row is selected! Please select a row","Please Select One",JOptionPane.ERROR_MESSAGE);
+                
+            }else{
+                DefaultTableModel model = (DefaultTableModel) stocktable.getModel();
+                model.removeRow(row);
+            }
+    }//GEN-LAST:event_button7ActionPerformed
+
+    private void tprofitFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tprofitFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tprofitFocusGained
+
+    private void tprofitFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tprofitFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tprofitFocusLost
+
+    private void tprofitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tprofitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tprofitActionPerformed
+
+    private void tdividendFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tdividendFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdividendFocusGained
+
+    private void tdividendFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tdividendFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdividendFocusLost
+
+    private void tinitialFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tinitialFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tinitialFocusGained
+
+    private void tinitialFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tinitialFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tinitialFocusLost
+
+    private void tquantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tquantityFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tquantityFocusGained
+
+    private void tquantityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tquantityFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tquantityFocusLost
+
+    private void tcompanyFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tcompanyFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tcompanyFocusGained
+
+    private void tcompanyFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tcompanyFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tcompanyFocusLost
+
+    private void ttradingFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ttradingFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttradingFocusGained
+
+    private void ttradingFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ttradingFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttradingFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -1019,14 +1357,21 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
     private frontend.start.Button button2;
     private frontend.start.Button button3;
     private frontend.start.Button button4;
+    private frontend.start.Button button5;
+    private frontend.start.Button button6;
+    private frontend.start.Button button7;
     private frontend.Components.Clock clock1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1037,13 +1382,21 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable stocktable;
+    private javax.swing.JTextField tcompany;
+    private javax.swing.JTextField tdividend;
     private javax.swing.JTextField temail;
     private javax.swing.JTextField tfirst;
+    private javax.swing.JTextField tinitial;
     private javax.swing.JTextField tlast;
     private javax.swing.JTextField tpassword;
+    private javax.swing.JTextField tprofit;
+    private javax.swing.JTextField tquantity;
+    private javax.swing.JTextField ttrading;
     private javax.swing.JTextField tusername;
     private javax.swing.JTable usertable;
     // End of variables declaration//GEN-END:variables
