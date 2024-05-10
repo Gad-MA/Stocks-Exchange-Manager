@@ -1242,7 +1242,7 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
     }//GEN-LAST:event_button6ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
-                int row = usertable.getSelectedRow();
+                int row = stocktable.getSelectedRow();
             
             if(row<0){
                 JOptionPane.showMessageDialog(this,"No row is selected! Please select a row","Please Select One",JOptionPane.ERROR_MESSAGE);
