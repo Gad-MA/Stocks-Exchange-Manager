@@ -241,7 +241,7 @@ public class Registration extends javax.swing.JFrame {
                 users.register(username.getText(), password.getText());
                 registerNow.setEnabled(false);
                 this.dispose();
-                new Admin().setVisible(true);
+                new Login().setVisible(true);
                 //this.dispose();
 
             }
