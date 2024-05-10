@@ -23,10 +23,7 @@ public class Admin extends javax.swing.JFrame {
     public Admin() {
         setUndecorated(true);
         initComponents();
-        jLabel5.setText(DateFormat.getDateTimeInstance().format(new Date()));
-       
-
-        
+         
     }
 
     /**
