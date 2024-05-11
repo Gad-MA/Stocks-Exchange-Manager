@@ -84,9 +84,15 @@ public class Admin extends javax.swing.JFrame {
         Pricehistory = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
         ApprovalSys = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        button8 = new frontend.start.Button();
+        button9 = new frontend.start.Button();
         TradingSys = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -198,6 +204,9 @@ public class Admin extends javax.swing.JFrame {
         Approval.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Approval.setOpaque(true);
         Approval.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ApprovalMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ApprovalMouseEntered(evt);
             }
@@ -214,6 +223,9 @@ public class Admin extends javax.swing.JFrame {
         Trading.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Trading.setOpaque(true);
         Trading.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TradingMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 TradingMouseEntered(evt);
             }
@@ -683,20 +695,37 @@ public class Admin extends javax.swing.JFrame {
 
         Obj.addTab("tab6", jPanel1);
 
-        Pricehistory.setBackground(new java.awt.Color(255, 255, 255));
+        Pricehistory.setBackground(new java.awt.Color(0, 143, 255));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Price History");
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable5);
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Order List");
 
         javax.swing.GroupLayout PricehistoryLayout = new javax.swing.GroupLayout(Pricehistory);
         Pricehistory.setLayout(PricehistoryLayout);
@@ -706,13 +735,32 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(PricehistoryLayout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addGroup(PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PricehistoryLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         PricehistoryLayout.setVerticalGroup(
             PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PricehistoryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(354, Short.MAX_VALUE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(PricehistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PricehistoryLayout.createSequentialGroup()
+                    .addGap(55, 55, 55)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(304, Short.MAX_VALUE)))
         );
 
         Obj.addTab("tab4", Pricehistory);
@@ -730,18 +778,40 @@ public class Admin extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable3);
 
+        button8.setText("Accept");
+        button8.setColorClick(new java.awt.Color(0, 140, 0));
+        button8.setColorOver(new java.awt.Color(0, 255, 0));
+        button8.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        button8.setRadius(40);
+
+        button9.setText("Reject");
+        button9.setColorClick(new java.awt.Color(181, 0, 0));
+        button9.setColorOver(new java.awt.Color(255, 0, 0));
+        button9.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        button9.setRadius(40);
+
         javax.swing.GroupLayout ApprovalSysLayout = new javax.swing.GroupLayout(ApprovalSys);
         ApprovalSys.setLayout(ApprovalSysLayout);
         ApprovalSysLayout.setHorizontalGroup(
             ApprovalSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ApprovalSysLayout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
         ApprovalSysLayout.setVerticalGroup(
             ApprovalSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ApprovalSysLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(40, 40, 40)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(ApprovalSysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         Obj.addTab("tab5", ApprovalSys);
@@ -1141,6 +1211,14 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
             Obj.setSelectedIndex(2);
     }//GEN-LAST:event_PriceMouseClicked
 
+    private void ApprovalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ApprovalMouseClicked
+        Obj.setSelectedIndex(3);
+    }//GEN-LAST:event_ApprovalMouseClicked
+
+    private void TradingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TradingMouseClicked
+        Obj.setSelectedIndex(4);
+    }//GEN-LAST:event_TradingMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1195,11 +1273,15 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
     private frontend.start.Button button5;
     private frontend.start.Button button6;
     private frontend.start.Button button7;
+    private frontend.start.Button button8;
+    private frontend.start.Button button9;
     private frontend.Components.Clock clock1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -1209,9 +1291,11 @@ DefaultTableModel model = (DefaultTableModel) usertable.getModel();
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTable stocktable;
     private javax.swing.JTextField tcompany;
     private javax.swing.JTextField tdividend;
