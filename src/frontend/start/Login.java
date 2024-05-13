@@ -3,11 +3,7 @@ package frontend.start;
 
 import frontend.Components.PanelCover;
 
-import java.text.DateFormat;
-import java.util.Date;
-
 import backend.UsersDatabase;
-import backend.User;
 
 public class Login extends javax.swing.JFrame {
     UsersDatabase users = UsersDatabase.getInstance();
@@ -17,7 +13,7 @@ public class Login extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -195,10 +191,6 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jTextField1ActionPerformed
-
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
         backend.User user = users.login(username.getText(), password.getText());
@@ -223,9 +215,6 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
         }
     }// GEN-LAST:event_RegisterActionPerformed
-
-    private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {
-    }
 
     public static void main(String args[]) {
 

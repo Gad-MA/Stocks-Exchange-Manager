@@ -1,12 +1,7 @@
-import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-
 import frontend.start.*;
 import backend.OrdersDatabase;
 import backend.StocksDatabase;
 import backend.StocksWalletsDatabase;
-import backend.Transaction;
 import backend.TransactionsHistoryDatabase;
 import backend.UsersDatabase;
 
@@ -19,7 +14,7 @@ public class StockExchangeManager {
         TransactionsHistoryDatabase transactionsDatabase = TransactionsHistoryDatabase.getInstance();
         OrdersDatabase ordersDatabase = OrdersDatabase.getInstance();
 
-        new Login().setVisible(true);
+        new Admin().setVisible(true);
 
         usersDatabase.printUsers();
         // stocksDatabase.printStocks();

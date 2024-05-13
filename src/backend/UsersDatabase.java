@@ -51,6 +51,10 @@ public class UsersDatabase implements Serializable { // Used the singleton desig
         users.remove(username);
     }
 
+    public Map<String, User> getUsersHashmap(){
+        return users;
+    }
+
     public void addUser(String username, String password, boolean isAdmin) {
         if (!isAdmin)
             users.put(username, new User(username, password));
